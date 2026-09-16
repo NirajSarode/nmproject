@@ -32,8 +32,8 @@ export const milestones: Milestone[] = [
     images: [
       "/photo1.jpg",
       "/photo2.jpg",
-      "/photo3.HEIC",
-      "/photo4.HEIC"
+      "/photo3.jpg",
+      "/photo4.jpg"
     ],
     charactersUrl: "/couple.svg",
     animationType: "zoom-in",
@@ -47,7 +47,7 @@ export const milestones: Milestone[] = [
     description: "We are playing a game most people quit. We don't quit.",
     backgroundUrl: "",
     images: [
-      "/blr-photo.HEIC",
+      "/blr-photo.jpg",
       "/nyc-photo.png"
     ],
 
@@ -87,7 +87,7 @@ export const milestones: Milestone[] = [
     date: "Present",
     title: "Our Story Continues",
     description: "We have more road ahead than behind. Looking forward to all the tomorrows.",
-    backgroundUrl: "/present.HEIC",
+    backgroundUrl: "/present.jpg",
     charactersUrl: "/couple.svg",
     animationType: "fade-slide",
     location: "Everywhere",

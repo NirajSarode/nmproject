@@ -1,11 +1,20 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Music, Music4 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function MusicToggle() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.play().catch(error => {
+        console.warn("Autoplay prevented by browser:", error);
+        setIsPlaying(false);
+      });
+    }
+  }, []);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -19,7 +28,7 @@ export default function MusicToggle() {
 
   return (
     <>
-      <audio ref={audioRef} loop src="/music/music.mp3" />
+      <audio ref={audioRef} loop autoPlay src="/music/music.mp3" />
       <motion.button
         onClick={togglePlay}
         className="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-white/40 backdrop-blur-md text-stone-800 border border-white/50 hover:bg-white/60 transition-all shadow-lg"
